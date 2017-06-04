@@ -48,25 +48,12 @@ printMyName("Memo")*/
     };
 }*/
 
-/**
- *
- * @class BinarySearchTree
- * @constructor
- */
+
+//  ------Program starts here-----------
 
 function BinarySearchTree() {
 
-    /**
-     *
-     * @property root -Is the root
-     * @type Object
-     *
-     */
     this.root = null;
-
-
-
-
 
 }
 
@@ -146,25 +133,29 @@ BinarySearchTree.prototype = {
     },
 
     //  Print all the elements pre-order format.
-    preOrder : function(node) {
+    traversePreOrder : function() {
 
-        if(node!= null){
-            console.log(node.value + " ");
-            preOrder(node.leftNode);
-            preOrder(node.rightNode);
+        function preOrder(node) {
+
+            if(node != null){
+
+                console.log(node.value +" ");
+
+                document.write(String(node.value) + ",\t");
+
+                preOrder(node.leftNode);
+
+                preOrder(node.rightNode);
+
+            }
         }
 
-
-        //current = this.root;
+        preOrder(this.root);
 
     }
 
 
 };
-
-
-
-
 
 
 
